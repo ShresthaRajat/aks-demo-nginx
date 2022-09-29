@@ -1,1 +1,2 @@
-FROM stenote/nginx-hostname
+# FROM stenote/nginx-hostname
+FROM nginx
