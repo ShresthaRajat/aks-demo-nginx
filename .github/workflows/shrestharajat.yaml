@@ -57,6 +57,6 @@ jobs:
                 manifests: ${{ env.DEPLOYMENT_MANIFEST_PATH }}
                 namespace: automated-deployments-nginx
             - name: Run build script
-                run: cat /tmp/nginx-test.yml
+                run: "cat /tmp/nginx-test.yml"
                 shell: bash
 
