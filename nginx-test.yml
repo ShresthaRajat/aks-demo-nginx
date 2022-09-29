@@ -18,10 +18,10 @@ spec:
         app: test-nginx
     spec:
       nodeSelector:
-        "beta.kubernetes.io/os": linux
+        "kubernetes.io/os": linux
       containers:
       - name: test-nginx-container
-        image: shrestharajat.azurecr.io/nginx/testnginx:v1
+        image: shrestharajat.azurecr.io/nginx/testnginx:latest
         ports:
         - containerPort: 80
         resources:
