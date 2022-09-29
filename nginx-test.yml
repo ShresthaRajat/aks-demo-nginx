@@ -21,7 +21,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
       - name: test-nginx-container
-        image: shrestharajat.azurecr.io/nginx/testnginx:${{ github.sha }}
+        image: shrestharajat.azurecr.io/nginx/testnginx:v1
         ports:
         - containerPort: 80
         resources:
