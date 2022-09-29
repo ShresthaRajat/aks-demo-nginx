@@ -56,5 +56,4 @@ jobs:
                 images: ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ github.sha }}
                 manifests: ${{ env.DEPLOYMENT_MANIFEST_PATH }}
                 namespace: automated-deployments-nginx
-              name: Call a Bash Script
-                run:  bash ${GITHUB_WORKSPACE}/scripts/example.sh my-folder-name
+            
