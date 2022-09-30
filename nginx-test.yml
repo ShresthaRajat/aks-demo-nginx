@@ -21,8 +21,8 @@ spec:
         "kubernetes.io/os": linux
       containers:
       - name: test-nginx-container
-        image: shrestharajat.azurecr.io/nginx/testnginx:asdasdasd
-        # image: shrestharajat.azurecr.io/nginx/testnginx:${GITHUB_SHA}
+        # the image will be automatically replaced by the azure aks automatic deployment action
+        image: shrestharajat.azurecr.io/nginx/testnginx:latest
         ports:
         - containerPort: 80
         resources:
