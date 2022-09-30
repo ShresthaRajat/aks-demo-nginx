@@ -7,8 +7,8 @@ name: shrestharajat
 env:
     ACR_RESOURCE_GROUP: test-nginx
     AZURE_CONTAINER_REGISTRY: shrestharajat
-    CLUSTER_NAME: testnginxakscluster
-    CLUSTER_RESOURCE_GROUP: test-nginx-42069
+    CLUSTER_NAME: nginx-cluster
+    CLUSTER_RESOURCE_GROUP: test-nginx
     CONTAINER_NAME: nginx/testnginx
     DEPLOYMENT_MANIFEST_PATH: |
         ./nginx-test.yml
