@@ -1,4 +1,6 @@
-### Steps:
+## AKS Ingress demo
+
+## Steps:
 1. Create two deployment yml files for the demo applications (Done in this repo)
 
 2. Switch to the hello-world namespace and apply the deployments
@@ -22,4 +24,33 @@ helm install ingress-nginx ingress-nginx/ingress-nginx \ --create-namespace \ --
 4. Use hello world ingress yml file to deploy the ingress services
 
 ```
+kubectl create -f hello-world-ingress.yml
+```
 
+### Debugging commands:
+```bash
+# To view the running pods:
+kubectl get po
+kubectl get po --all-namespaces
+
+# To view services:
+kubectl get svc
+kubectl get svc --all-namespaces
+
+## To view ingress:
+kubectl get ingress
+kubectl get ingress --all-namespaces
+
+## To view all of these at the same time
+kubectl get ingress,po,svc
+kubectl get ingress,po,svc --all-namespaces
+
+## To view the current config on kubectl
+kubectl view config
+
+## To delete config contexts, users, and clusters
+kubectl config unset clusters
+kubectl config unset contexts
+kubectl config unset users
+
+```
