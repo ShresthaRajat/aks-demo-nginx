@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-nginx
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5 
+  template:
+    metadata:
+      labels:
+        app: test-nginx
+    spec:
+      nodeSelector:
+        "kubernetes.io/os": linux
+      containers:
+      - name: test-nginx-container
+        # the image will be automatically replaced by the azure aks automatic deployment action
+        image: ghcr.io/shrestharajat/mazer/mazer:latest
+        ports:
+        - containerPort: 8001
+        resources:
+          requests:
+            cpu: 250m
+          limits:
+            cpu: 500m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-nginx
+spec:
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8001
+  selector:
+    app: test-nginx

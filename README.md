@@ -42,23 +42,7 @@ az acr build --image nginx/testnginx:latest --registry shrestharajat --file Dock
 	- Go to your github repo and accept the pull request
 	[If you do not want to use the default namespace you will need to define a new service and ingress](https://learn.microsoft.com/en-us/training/modules/aks-deploy-container-app/7-exercise-expose-app)
 
-5. Enable the Github action to fetch the image by setting ACR credentials on GHA secrets
-	1.  On the repository start page, select the **Settings** tab. In the menu, select **Secrets**.
-	2. Set the following secrets:
-		ACR_NAME = shrestharajat
-		ACR_LOGIN = shrestharajat
-		ACR_PASSWORD = xxxxxxxxxxxxxxxxxxxx
-	To get these values you can use the following commands:
-```bash
-# ACR_NAME
-az acr list --query "[?contains(resourceGroup, 'test-nginx')].loginServer" -o table
-
-# ACR_LOGIN
-az acr credential show --name shrestharajat.azurecr.io --query "username" -o table
-  
-# ACR_PASSWORD
-az acr credential show --name shrestharajat.azurecr.io --query "passwords[0].value" -o table
-```
+5. TODO: fix the gha pulling image after deploy
 
 
 ## Msic commands:
